@@ -42,11 +42,58 @@
   <meta name="theme-color" content="#bbf17f">
   
   <!-- title of website -->
-  <title>My Skeleton Template</title>
+  <title>SoundChain - Brian Bauska - 2026</title>
+  <link rel="stylesheet" href="./css/styles.css">
 
   <!-- cascade style sheets -->
-  <!--  <link href="../css/dark-styles.css" rel="stylesheet" media="screen" />  /* media="all" */ -->
-  <link href="../css/light-styles.css" rel="stylesheet" media="screen" />  /* media="all" */
-  <!--  <link href='https://fonts.googleapis.com/css?family=Armata' rel='stylesheet' type='text/css'> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 </head>
+  <body>
+  <div id="header">
+  </div>
+  <div id="synth">
+    <div id="audio">Audio <button id="audiobutton" onclick="playAudio();" type="button">Start Audio</button></div>
+    <div id="osc" class="controls">
+      <h2>Oscillators</h2>
+      <p>
+      Osc 1 [<span id="osc1val"></span>]<br>
+      <input type="range" min="10" max="1500" id="osc1" value="64" step="0.001">
+    </p>
+    <p>
+      Osc 2 [<span id="osc2val"></span>]<br>
+      <input type="range" min="10" max="1500" id="osc2" value="440" step="0.001">
+    </p>
+    </div>
+    <div id="lfo" class="controls">
+      <h2>Low Frequency Oscillator</h2>
+      <p>
+        LFO Speed<br>
+        <input type="range" min="-30" max="30" step="0.001" value="1" id="lfospeed">
+      </p>
+      <p>
+        LFO Amount<br>
+        <input type="range" min="0" max="2" step="0.001" value="0" id="lfoamount">
+      </p>
+      <p>
+        LFO Shape: Sine <input type="radio" name="lfoshape" class="lfoshape" value="sine" checked>
+        Saw <input type="radio" name="lfoshape" class="lfoshape" value="sawtooth">
+        Square <input type="radio" name="lfoshape" class="lfoshape" value="square">
+      </p>
+    </div>
+    <div id="filter" class="controls">
+      <h2>Filter</h2>
+      <p>
+        Filter cutoff<br>
+        <input type="range" min="0" max="2500" step="0.001" value="200" id="filterfreq">
+      </p>
+      <p>
+        Filter resonance<br>
+        <input type="range" min="0" max="7" step="0.001" value="5" id="filterres">
+      </p>
+    </div>
+    <br style="height:0px;clear:both;">
+  </div>
+  <script src="./js/music.js"></script>
+</body>
+  </html>
